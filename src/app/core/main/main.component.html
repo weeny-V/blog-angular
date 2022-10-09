@@ -1,0 +1,13 @@
+<div class='flex flex-col h-full relative'>
+  <app-loader *ngIf='isLoading'></app-loader>
+  <app-nav-bar class='flex-[0_0_auto]'></app-nav-bar>
+  <div class='flex-[1_0_auto]'>
+    <div class='w-full flex justify-center'>
+      <app-sidebar class='mr-6'></app-sidebar>
+      <div class='min-w-[1030px] flex justify-center border-solid border-gray-300 border-x'>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <app-footer class='flex-[0_0_auto]'></app-footer>
+</div>

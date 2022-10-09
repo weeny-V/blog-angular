@@ -1,0 +1,23 @@
+.sidebar {
+  height: calc( 100vh - 96px);
+}
+
+.popup {
+  display: none;
+
+  &:before {
+    content: '';
+    transform: rotate(45deg);
+    position: absolute;
+    background-color: black;
+    z-index: -1;
+    width: 16px;
+    height: 16px;
+    left: -4px;
+    top: 25%;
+  }
+}
+
+.icon:hover + .popup {
+  display: flex;
+}

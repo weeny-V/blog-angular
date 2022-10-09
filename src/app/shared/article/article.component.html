@@ -1,0 +1,31 @@
+<div class='flex items-center mb-2'>
+  <img class='w-10 h-10 rounded-full object-cover mr-4' [src]='article.authorPhotoUrl' alt='author'>
+  <span class='mr-2 text-sm'>{{ article.author }}</span>
+  &bull;
+  <span class='ml-2 text-sm'>{{ article.createdDate}}</span>
+</div>
+<div class='flex'>
+  <div class='mr-8 max-w-[550px]'>
+    <p class='font-black text-2xl'>{{ article.title }}</p>
+    <p class='text-base text-ellipsis overflow-hidden h-[76px]'>{{ article.text }}</p>
+  </div>
+  <div class='flex items-center'>
+    <img class='w-32 h-32 object-cover' src='assets/article-photo.jpg' alt='photo'>
+  </div>
+</div>
+<div class='flex items-center justify-between max-w-[550px]'>
+  <span class='bg-gray-200 rounded-lg w-fit px-2 py-1 text-sm'>{{ article.topic }}</span>
+  <div class='flex items-center'>
+    <button class='mr-2'>
+      <svg class='stroke-black w-7 fill-transparent' viewBox="0 0 48 48" width="48px" height="48px">
+        <path d="M37,43l-13-6l-13,6V9c0-2.2,1.8-4,4-4h18c2.2,0,4,1.8,4,4V43z"/>
+      </svg>
+    </button>
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+        <path
+          d="M6 14q-.825 0-1.412-.588Q4 12.825 4 12t.588-1.413Q5.175 10 6 10t1.412.587Q8 11.175 8 12q0 .825-.588 1.412Q6.825 14 6 14Zm6 0q-.825 0-1.412-.588Q10 12.825 10 12t.588-1.413Q11.175 10 12 10t1.413.587Q14 11.175 14 12q0 .825-.587 1.412Q12.825 14 12 14Zm6 0q-.825 0-1.413-.588Q16 12.825 16 12t.587-1.413Q17.175 10 18 10q.825 0 1.413.587Q20 11.175 20 12q0 .825-.587 1.412Q18.825 14 18 14Z"/>
+      </svg>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class='flex items-center w-full h-full'>
+  <div class='w-[680px] h-full bg-gray-800 flex flex-col items-center py-12 px-10'>
+    <div class='w-[340px] my-auto'>
+      <img src='assets/logo-white.png' alt='blog'>
+    </div>
+    <div class='w-fit my-auto flex justify-center'>
+      <span class='font-bold text-8xl text-white flex justify-center leading-[120px] text-center'>Stay cool with blog</span>
+    </div>
+    <div class='flex flex-col items-center my-auto w-full'>
+      <h2 class='text-white'>Log in to your account:</h2>
+      <div class='flex'>
+        <button
+          (click)='googleAuth()'
+          class='flex justify-center items-center rounded-xl h-11 p-3 font-medium text-base bg-white mr-6'>
+          <img class='w-8' src='assets/google.svg' alt='google'>
+        </button>
+        <button
+          (click)='facebookAuth()'
+          class='flex justify-center items-center rounded-xl h-11 p-3 font-medium text-base bg-white mr-6'>
+          <img class='w-10' src='assets/facebook.svg' alt='facebook'>
+        </button>
+        <button class='flex justify-center items-center rounded-xl h-11 p-3 font-medium text-base bg-white'>
+          <img class='w-8' src='assets/twitter.svg' alt='twitter'>
+        </button>
+      </div>
+      <div class='w-full h-0.5 bg-gray-500 rounded my-6'></div>
+      <button
+        routerLink='/sign-up'
+        type='button'
+        class='bg-white shadow w-full font-medium text-black text-base h-11 rounded-md'
+      >Sign Up
+      </button>
+    </div>
+  </div>
+  <div class='w-full h-full flex justify-center items-center login'>
+    <form
+      [formGroup]='loginForm'
+      (ngSubmit)='login()'
+      class='flex flex-col p-8 bg-login-form backdrop-blur-md rounded-xl w-[450px] drop-shadow-lg'>
+      <input
+        type='email'
+        class='w-full h-11 mb-6 px-4 rounded-md drop-shadow font-medium focus:outline-gray-200 text-gray-500'
+        placeholder='Enter email or username'
+        formControlName='email'
+        (input)='auth.validation($event)'
+        required>
+      <input
+        type='password'
+        class='w-full h-11 mb-6 px-4 rounded-md drop-shadow font-medium focus:outline-gray-200 text-gray-500'
+        placeholder='Enter password'
+        formControlName='password'
+        (input)='auth.validation($event)'
+        required>
+      <button
+        [disabled]='!loginForm.valid || isLoading'
+        class='w-full h-11 self-end bg-gray-700 rounded text-base font-medium px-2 drop-shadow text-white relative disabled:bg-gray-300'>
+        Log in
+        <app-spinner *ngIf='isLoading' class='absolute right-3 top-2'></app-spinner>
+      </button>
+    </form>
+  </div>
+</div>

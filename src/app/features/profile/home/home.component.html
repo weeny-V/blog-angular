@@ -1,0 +1,16 @@
+<ul class='pt-20'>
+  <li class='flex justify-between bg-gray-100 border border-gray-300 h-44 rounded-lg' *ngFor='let list of home'>
+    <div class='flex flex-col justify-between h-full py-6 pl-6'>
+      <p class='text-xl tracking-wide font-bold'>{{list.title}}</p>
+      <div class='flex items-center'>
+        <button class='border border-black rounded-xl p-1.5 mr-6'>View list</button>
+        <div class='flex items-center'>{{list.lists.length}} story <mat-icon class='text-gray-500 text-xs'>lock</mat-icon></div>
+      </div>
+    </div>
+    <div class='flex'>
+      <div class='h-full w-44 bg-gray-300 mr-1'></div>
+      <div class='h-full w-20 bg-gray-400 mr-1'></div>
+      <div class='h-full w-12 bg-gray-500 rounded-r-lg '></div>
+    </div>
+  </li>
+</ul>

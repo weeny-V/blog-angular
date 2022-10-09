@@ -1,0 +1,9 @@
+<div class='flex w-full h-full justify-center items-center'>
+  <ul *ngIf='published.length !== 0' class='flex flex-col items-center py-14'>
+    <li *ngFor='let article of published; let index = index'>
+      <app-article [article]='article'></app-article>
+      <div *ngIf='index !== published.length-1' class='w-full h-[1px] bg-gray-300 my-6 rounded'></div>
+    </li>
+  </ul>
+  <p class='text-base' *ngIf='published.length === 0'>You haven’t published any public stories yet.</p>
+</div>

@@ -1,0 +1,30 @@
+@mixin hoverEffect {
+  content: '';
+  position: absolute;
+  height: 4px;
+  border-radius: 8px;
+  bottom: 0;
+  left: 0;
+  transition: width .2s;
+}
+
+.link {
+  &:hover {
+    color: #9D9D9D;
+    cursor: pointer;
+  }
+
+  &__active {
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+
+    &:after {
+      @include hoverEffect;
+      width: 100%;
+      background-color: white;
+    }
+  }
+}
